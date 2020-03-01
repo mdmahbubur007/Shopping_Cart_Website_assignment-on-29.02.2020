@@ -19,9 +19,10 @@ addQuantity.addEventListener("click", function() {
 
 var deductQuantity = document.getElementById("deductBtn");
 deductQuantity.addEventListener("click", function() {
-    const currentBalance = document.getElementById("addIncrement").value;
+    if (addIncrement.value>0) {
+        const currentBalance = document.getElementById("addIncrement").value;
     const currentBalanceNumber=parseFloat(currentBalance);
-    const actualBalance = currentBalanceNumber-1;
+    const actualBalance = currentBalanceNumber -1;
     document.getElementById("addIncrement").value=actualBalance;
     document.getElementById("billAmount").innerText=actualBalance*1219;
 
@@ -34,6 +35,8 @@ deductQuantity.addEventListener("click", function() {
     var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
     var totalAmount = mobileTotalAmount + caseTotalAmount;
     document.getElementById("totalAmount").innerText=totalAmount;
+    }
+    
 })
 
 var addQuantity = document.getElementById("addBtnCase");
@@ -57,7 +60,8 @@ addQuantity.addEventListener("click", function() {
 
 var deductQuantity = document.getElementById("deductBtnCase");
 deductQuantity.addEventListener("click", function() {
-    const currentBalance = document.getElementById("addIncrementCase").value;
+    if (addIncrementCase.value>0) {
+        const currentBalance = document.getElementById("addIncrementCase").value;
     const currentBalanceNumber=parseFloat(currentBalance);
     const actualBalance = currentBalanceNumber-1;
     document.getElementById("addIncrementCase").value=actualBalance;
@@ -72,4 +76,11 @@ deductQuantity.addEventListener("click", function() {
     var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
     var totalAmount = mobileTotalAmount + caseTotalAmount;
     document.getElementById("totalAmount").innerText=totalAmount;
+    }
+    
+})
+var displayBtn = document.getElementById("displayBtn");
+displayBtn.addEventListener("click", function () {
+    const displayArea = document.getElementById("cart-item");
+    displayArea.style.display="none";
 })
