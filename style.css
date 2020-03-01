@@ -43,6 +43,9 @@ body{
 #cart-item{
 	cursor: pointer;
 }
+#cart-item-1{
+	cursor: pointer;
+}
 .input-group{
 	width: unset;
 }

@@ -81,6 +81,18 @@ deductQuantity.addEventListener("click", function() {
 })
 var displayBtn = document.getElementById("displayBtn");
 displayBtn.addEventListener("click", function () {
-    const displayArea = document.getElementById("cart-item");
-    displayArea.style.display="none";
+    const displayArea = document.getElementById("addIncrement");
+    displayArea.value=0;
+    billAmount.innerText=0;
+    subTotalAmount.innerText= parseFloat(document.getElementById("billAmountCase").innerText);
+    totalAmount.innerText= parseFloat(document.getElementById("billAmountCase").innerText);
+})
+var displayBtn = document.getElementById("displayBtn-1");
+displayBtn.addEventListener("click", function () {
+    const displayArea = document.getElementById("addIncrementCase");
+    const billAmountCase = document.getElementById("billAmountCase");
+    displayArea.value=0;
+    billAmountCase.innerText=0;
+    subTotalAmount.innerText= parseFloat(document.getElementById("billAmount").innerText);
+    totalAmount.innerText= parseFloat(document.getElementById("billAmount").innerText);
 })
