@@ -77,7 +77,7 @@ deductQuantity.addEventListener("click", function() {
     var totalAmount = mobileTotalAmount + caseTotalAmount;
     document.getElementById("totalAmount").innerText=totalAmount;
     }
-    
+
 })
 var displayBtn = document.getElementById("displayBtn");
 displayBtn.addEventListener("click", function () {
