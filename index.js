@@ -6,15 +6,8 @@ addQuantity.addEventListener("click", function() {
     document.getElementById("addIncrement").value=currentIncrementedNumber;
     document.getElementById("billAmount").innerText=currentIncrementedNumber*1219;
 
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var subTotalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("subTotalAmount").innerText=subTotalAmount;
-
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var totalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("totalAmount").innerText=totalAmount;
+    updateSubTotal() 
+    updateTotal("totalAmount")
 })
 
 var deductQuantity = document.getElementById("deductBtn");
@@ -26,15 +19,8 @@ deductQuantity.addEventListener("click", function() {
     document.getElementById("addIncrement").value=actualBalance;
     document.getElementById("billAmount").innerText=actualBalance*1219;
 
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var subTotalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("subTotalAmount").innerText=subTotalAmount;
-    
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var totalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("totalAmount").innerText=totalAmount;
+    updateSubTotal() 
+    updateTotal("totalAmount") 
     }
     
 })
@@ -47,15 +33,8 @@ addQuantity.addEventListener("click", function() {
     document.getElementById("addIncrementCase").value=currentIncrementedNumber; 
     document.getElementById("billAmountCase").innerText=currentIncrementedNumber*59;
 
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var subTotalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("subTotalAmount").innerText=subTotalAmount;
-
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var totalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("totalAmount").innerText=totalAmount;
+    updateSubTotal()   
+    updateTotal("totalAmount")   
 })
 
 var deductQuantity = document.getElementById("deductBtnCase");
@@ -66,16 +45,9 @@ deductQuantity.addEventListener("click", function() {
     const actualBalance = currentBalanceNumber-1;
     document.getElementById("addIncrementCase").value=actualBalance;
     document.getElementById("billAmountCase").innerText=actualBalance*59; 
-    
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var subTotalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("subTotalAmount").innerText=subTotalAmount;
 
-    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
-    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
-    var totalAmount = mobileTotalAmount + caseTotalAmount;
-    document.getElementById("totalAmount").innerText=totalAmount;
+    updateSubTotal()
+    updateTotal("totalAmount")
     }
 
 })
@@ -96,3 +68,15 @@ displayBtn.addEventListener("click", function () {
     subTotalAmount.innerText= parseFloat(document.getElementById("billAmount").innerText);
     totalAmount.innerText= parseFloat(document.getElementById("billAmount").innerText);
 })
+function updateSubTotal() {
+    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
+    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
+    var subTotalAmount = mobileTotalAmount + caseTotalAmount;
+    document.getElementById("subTotalAmount").innerText=subTotalAmount;  
+}
+function updateTotal(id) {
+    var mobileTotalAmount = parseFloat(document.getElementById("billAmount").innerText);
+    var caseTotalAmount = parseFloat(document.getElementById("billAmountCase").innerText);
+    var totalAmount = mobileTotalAmount + caseTotalAmount;
+    document.getElementById(id).innerText=totalAmount;
+}
